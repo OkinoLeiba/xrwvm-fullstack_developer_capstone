@@ -4,8 +4,11 @@
   <link rel="stylesheet" href="/static/bootstrap.min.css">
   <style>
     .card-img-top {height: 100%; width: 100%;}
-    #"main-center {padding: 10px; margin: 10px; border: 2px solid black; border-radius: 5px;
-}
+    #img-top-center {height: 50%; width: 95%; padding-bottom: 20px; }
+    #main-center {display: flex; flex-direction: column; padding: 10px; margin: 0; border: 2px solid black; border-radius: 5px; box-shadow: 2px 2px 1px gray;}
+    #img-text {display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; padding: 0, 40px, 0, 40px; border-top: 1px solid lightgray; }
+    #left-img {display: flex; width: 40%; height: 40%; top : 50%; left: 50%;}
+    #contact-text {display: flex; flex-direction: column; line-height: 3px; color: blue; font-size: 14px; align-items: center; border-left: 1px solid black; padding-left: 10px;}
   </style>
 </head>
 <div>
@@ -33,10 +36,10 @@
     </nav>
 
     <div id="main-center" >
-        <img class="img-top-center" src="static/car-dealership.jpeg" alt="cars image">
-        <div class="img-call" style="width: 30%;">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image">
-            <div>
+        <img id="img-top-center" src="/static/car-dealership.jpeg" alt="cars image">
+        <div id="img-text">
+            <img id="left-img" src="/static/contactus.png" alt="contact image">
+            <div id="contact-text" >
                 <p>Contact Customer Service</p>
                 <p>support@bestcars.com</p>
                 <p>Contact Our National Advertising Team</p>
