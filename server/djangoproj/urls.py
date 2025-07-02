@@ -28,7 +28,7 @@ urlpatterns = [
     path('contact/', TemplateView.as_view(template_name="Contact.html")),
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
-    path(route='login', view=views.login_user, name='login'),
-    path(route='logout', view=views.logout_request, name='logout'),
+    path(route='login', view=views.login_user, name='login'),path(route='login', view=views.login_user, name='login'),
+      
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # server/djangoapp/views.py
