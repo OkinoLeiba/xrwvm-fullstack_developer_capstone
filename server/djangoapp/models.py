@@ -34,6 +34,7 @@ class CarMake(models.Model):
         return self.name  
 
 class CarModel(models.Model):
+    car_make = models.ForeignKey(CarMake, null=True, default=1, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
@@ -47,7 +48,7 @@ class CarModel(models.Model):
             MaxValueValidator(2025),
             MinValueValidator(1846)
         ])
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  
+    
 
 
     def __str__(self):
