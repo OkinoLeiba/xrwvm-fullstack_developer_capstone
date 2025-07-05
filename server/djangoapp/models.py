@@ -25,29 +25,30 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - __str__ method to print a car make object
 
 class CarMake(models.Model):
-    # def __init(self) -> None:
+    # def __init__(self) -> None:
     name = models.CharField(max_length=100)
     description = models.TextField()
 
+
     def __str__(self):
-        return self.name 
+        return self.name  
 
 class CarModel(models.Model):
-    # def __init(self) -> None:
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    dealer_id = models.IntegerField(max_length=100)
     name = models.CharField(max_length=100)
     CAR_TYPES = [
-        ("SEDAN", "Sedan"),
-        ("SUV", "SUV"),
-        ("WAGON", "Wagon"),
+        ('SEDAN', 'Sedan'),
+        ('SUV', 'SUV'),
+        ('WAGON', 'Wagon'),
+       
     ]
-    type = models.CharField(max_length=10, choices=CAR_TYPES, default="SUV")
-    year = models.IntegerField(max_length=4, default=2025, 
+    type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
+    year = models.IntegerField(default=2025,
         validators=[
             MaxValueValidator(2025),
             MinValueValidator(1846)
         ])
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  
+
 
     def __str__(self):
-        return self.name 
+        return self.name  
