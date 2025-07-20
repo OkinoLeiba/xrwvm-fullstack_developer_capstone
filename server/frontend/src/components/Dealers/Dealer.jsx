@@ -34,6 +34,7 @@ const Dealer = () => {
       let dealerobjs = Array.from(retobj.dealer)
       setDealer(dealerobjs[0])
     }
+    
   }
 
   const get_reviews = async ()=>{
