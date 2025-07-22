@@ -16,15 +16,13 @@ def get_request(endpoint, **kwargs):
     params = ""
     if(kwargs):
         for key,value in kwargs.items():
-            params=params+key+"="+value+"&"
-            
-    request_url = backend_url+endpoint+"?"+params
+            params = params+key+"="+value+"&"
 
-    print(request_url)
+    request_url = backend_url+endpoint+"?"+params
     try:
         response = requests.get(request_url)
         return response.json()
-    except RequestException as re:
+    except requests.exceptions.RequestException as re:
         print("Request Exception")
     except requests.exceptions.HTTPError as errh:
         print("HTTP Error")
@@ -41,7 +39,7 @@ def analyze_review_sentiments(text):
     try:
         response = requests.get(request_url)
         return response.json()
-    except RequestException as re:
+    except requests.exceptions.RequestException as re:
         print("Request Exception")
     except requests.exceptions.HTTPError as errh:
         print("HTTP Error")
