@@ -12,12 +12,16 @@ app.use(require('body-parser').urlencoded({ extended: false }));
 const reviews_data = JSON.parse(fs.readFileSync("reviews.json", 'utf8'));
 const dealerships_data = JSON.parse(fs.readFileSync("dealerships.json", 'utf8'));
 
+const car_records_data = JSON.parse(fs.readFileSync("car_records.json", 'utf8'));
+
 mongoose.connect("mongodb://mongo_db:27017/",{'dbName':'dealershipsDB'});
 
 
 const Reviews = require('./review');
 
 const Dealerships = require('./dealership');
+
+const Car_Records = require("./inventory");
 
 try {
   Reviews.deleteMany({}).then(()=>{
@@ -119,6 +123,18 @@ app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
     res.status(500).json({ error: 'Error inserting review' });
   }
 });
+
+// Express route to fetch Inventory based on varying parameters
+app.get("/recordsFetch/:param", (req, res) => {
+    try {
+        const documents = Car_Records.find(e => e.includes(req.params.param))
+        res.json(documents);
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Error fetching documents' });
+        }
+   
+})
 
 // Start the Express server
 app.listen(port, () => {

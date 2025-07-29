@@ -1,10 +1,10 @@
 img{
-  width: 60%;
+  width: 90%;
   align-self: center;
 }
 
 .card{
-  border: rgb(103, 102, 105) 3px solid;
+  border: rgb(100, 4, 26) 3px solid;
   display: flex;  
   flex-direction: column;
   margin-left:5%;
@@ -28,13 +28,13 @@ img{
 }
 .details{
   font-size: 20px;
-  color: rgb(97, 64, 128);
+  color: rgb(97, 45, 23);
   padding:20px;
 }
 
 .title{
   font-size: 20px;
-  background-color: rgb(97, 64, 128);
+  background-color: rgb(97, 34, 100);
   color: white;
   text-align: center;
   margin:20px;
@@ -42,7 +42,7 @@ img{
 }
 
 .homepage_links{
-  color:  rgb(97, 64, 128);
+  color:  rgb(97, 90, 67);
   padding: 25%;
   font-size: larger;
   }
