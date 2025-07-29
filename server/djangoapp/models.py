@@ -31,6 +31,8 @@ class CarMake(models.Model):
 
     def __str__(self):
         return self.name
+
+
 class CarModel(models.Model):
     
     car_make = models.ForeignKey(
@@ -51,6 +53,6 @@ class CarModel(models.Model):
                                 default=2025,
                                 validators=[MaxValueValidator(2025),
                                             MinValueValidator(1846)])
-     
+      
     def __str__(self):
         return self.name

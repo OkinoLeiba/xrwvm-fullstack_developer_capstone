@@ -28,10 +28,11 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://okinoleiba-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/', 
-'https://okinoleiba-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/']
-CSRF_TRUSTED_ORIGINS = ['https://okinoleiba-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/', 
-'https://okinoleiba-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+HOST1 = 'https://okinoleiba-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+HOST2 = 'https://okinoleiba-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/'
+
+ALLOWED_HOSTS = ['localhost', HOST1, HOST2]
+CSRF_TRUSTED_ORIGINS = [HOST1, HOST2]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -93,11 +94,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+UAS = 'UserAttributeSimilarityValidator'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'django.contrib.auth.password_validation.'+UAS,
     },
     {
         'NAME':

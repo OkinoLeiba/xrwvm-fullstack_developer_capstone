@@ -12,6 +12,7 @@ sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
     default="http://localhost:5050/")
 
+
 def get_request(endpoint, **kwargs):
 
     params = ""
@@ -36,9 +37,10 @@ def get_request(endpoint, **kwargs):
     #     print("Connection error")
     #     print(conerr)
 
+
 # Add code for retrieving sentiments
 def analyze_review_sentiments(text):
-
+    
     print(sentiment_analyzer_url)
     request_url = sentiment_analyzer_url+"analyze/"+text
     print(request_url)
