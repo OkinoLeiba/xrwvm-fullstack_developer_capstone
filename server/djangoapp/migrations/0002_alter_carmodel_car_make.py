@@ -14,6 +14,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='carmodel',
             name='car_make',
-            field=models.ForeignKey(default=1, null=True, on_delete=django.db.models.deletion.CASCADE, to='djangoapp.carmake'),
+            field=models.ForeignKey(default=1, 
+            null=True, 
+            on_delete=django.db.models.deletion.CASCADE, 
+            to='djangoapp.carmake'),
         ),
     ]
